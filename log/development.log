@@ -713,3 +713,17 @@ Completed 200 OK in 1098ms (Views: 1096.8ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/boostrap_and_customization.self-0ee2de3a72c58fc953d8eda29f4503253f74f11e460620d57286427e4a1eee72.css?body=1" for ::1 at 2017-01-05 21:10:47 +0700
+
+
+Started GET "/" for ::1 at 2017-01-05 22:05:43 +0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 4507ms (Views: 4478.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-05 22:07:25 +0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 1180ms (Views: 1178.9ms | ActiveRecord: 0.0ms)
