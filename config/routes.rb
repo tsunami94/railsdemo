@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#home'
+  get 'welcome/index'
   get 'about' => 'welcome#about' #about_path
 
   # The priority is based upon order of creation: first created -> highest priority.
