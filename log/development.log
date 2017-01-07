@@ -1303,3 +1303,51 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/sessions/new.html.erb within layouts/application (382.0ms)
   Rendered layouts/_header.html.erb (1.0ms)
 Completed 200 OK in 1855ms (Views: 1852.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-01-07 13:59:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (148.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 1538ms (Views: 1501.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-01-07 13:59:48 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JbmHjUcuHkk1UqfgWZGmEmyiB0TvnolKyjrdpPolN+xANLW5Z++o6LFo8LLEPeoor03eVDJEK3aJtqeRq1nqFw==", "user"=>{"email"=>"tuan3894@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "tuan3894@gmail.com"]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (9.0ms)[0m  [1mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2017-01-07 06:59:49.252599"], ["updated_at", "2017-01-07 06:59:49.256601"], ["id", 1]]
+  [1m[35m (110.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2017-01-07 06:40:39.003019"], ["current_sign_in_at", "2017-01-07 06:59:49.390149"], ["sign_in_count", 3], ["updated_at", "2017-01-07 06:59:49.404150"], ["id", 1]]
+  [1m[36m (101.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1171ms (ActiveRecord: 228.8ms)
+
+
+Started GET "/" for ::1 at 2017-01-07 13:59:50 +0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/home.html.erb within layouts/application (285.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 1660ms (Views: 1657.9ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-01-07 13:59:59 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aEJiQddbZ0Wuu/af5ZQPDm5z4EbqUVaQffdZFPLzcUs0C6/YXZBszObAurqUcn11Z8VCurRpJAYFa4mLtosY7g=="}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (4.5ms)[0m  [1mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2017-01-07 07:00:00.080397"], ["id", 1]]
+  [1m[35m (145.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 184ms (ActiveRecord: 150.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-07 14:00:00 +0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 926ms (Views: 925.4ms | ActiveRecord: 0.0ms)
